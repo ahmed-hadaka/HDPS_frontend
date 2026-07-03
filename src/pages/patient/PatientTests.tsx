@@ -152,7 +152,7 @@ export default function PatientTests() {
                         </td>
                         <td className="px-6 py-4">
                       <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold border ${pred.riskCategory}`}>
-                        {pred.riskCategory} Risk
+                        {pred.riskCategory} No Risk Category
                       </span>
                         </td>
                         <td className="px-6 py-4">
