@@ -90,7 +90,9 @@ export default function AdminTests() {
     setLoading(true);
     setError('');
     getAdminMedicalTests()
-        .then((res) => setPreds(res.data))
+        .then((res) =>{
+          setPreds(Array.isArray(res.data) ? res.data : []);
+        })
         .catch(() => setError('Failed to load predictions. Please try again.'))
         .finally(() => setLoading(false));
   };
