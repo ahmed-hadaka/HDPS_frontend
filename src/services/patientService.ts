@@ -107,7 +107,7 @@ export const getPatientAppointments = async (email: string) => {
     const response = await api.get<AppointmentListPatientViewDTO[]>(`/patient/me/appointments?patientEmail=${email}`);
     return Array.isArray(response.data) ? response.data : [];
   } catch (err: unknown) {
-    if (isNetworkError(err)) return offlineResponse([]);
+    if (isNetworkError(err)) return [];
     throw err;
   }
 };

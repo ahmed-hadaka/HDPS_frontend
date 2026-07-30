@@ -28,8 +28,8 @@ export interface PredictionItem {
 export interface PrescriptionItem {
   patientName: string;
   doctorName: string;
-  // prescriptionDate: string;
-  // content: string[];
+  prescriptionDate: string;
+  content: string[];
 }
 
 export interface PatientProfile {

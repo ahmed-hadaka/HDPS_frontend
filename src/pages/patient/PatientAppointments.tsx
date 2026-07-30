@@ -44,7 +44,7 @@ export default function PatientAppointments() {
     }
     try {
       const res = await getPatientAppointments(email);
-      setAppointments(res.data);
+      setAppointments(res);
     } catch {
       setError('Failed to load appointments.');
     } finally {
