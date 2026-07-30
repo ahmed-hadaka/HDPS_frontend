@@ -55,7 +55,7 @@ export default function PatientPrescriptions() {
       return;
     }
     getPatientPrescriptions(email)
-        .then((res) => setPrescriptions(res.data))
+        .then((response) => setPrescriptions(Array.isArray(response.data) ? response.data : []))
         .catch(() => setError('Failed to load prescriptions.'))
         .finally(() => setLoading(false));
   }, []);

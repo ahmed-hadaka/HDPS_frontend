@@ -86,7 +86,7 @@ export default function PatientTests() {
       return;
     }
     getPatientMedicalTests(email)
-        .then((res) => setServerTests(res.data))
+        .then((res) => setServerTests(Array.isArray(res.data) ? res.data : []))
         .catch(() => setError('Failed to load medical tests.'))
         .finally(() => setLoading(false));
   }, []);
