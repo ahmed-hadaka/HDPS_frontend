@@ -61,7 +61,9 @@ export default function AdminUsers() {
     setLoading(true);
     setError('');
     getAllUsersExceptAdmins()
-        .then((res) => setUsers(res.data))
+        .then((res) => {
+          setUsers(Array.isArray(res.data) ? res.data : []);
+        })
         .catch(() => setError('Failed to load users. Please try again.'))
         .finally(() => setLoading(false));
   };
